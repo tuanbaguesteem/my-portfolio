@@ -1,1 +1,302 @@
+/*-----------------------------------*\
+  #STYLE CLEAN CLIENT UI
+  Refactor from dark-portfolio to corporate-clean
+\*-----------------------------------*/
 
+
+/**
+ * copyright 2026 @tuanbagues
+ */
+
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+:root {
+
+  /* ===== COLORS ===== */
+
+  --bg-main: #f5f7fb;
+  --bg-card: #ffffff;
+  --bg-soft: #f0f2f7;
+
+  --border-color: #e3e6ee;
+
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --text-light: #9ca3af;
+
+  --primary: #2563eb;
+  --primary-soft: #dbeafe;
+  --accent: #10b981;
+  --danger: #ef4444;
+
+  /* ===== TYPO ===== */
+
+  --ff-poppins: 'Poppins', sans-serif;
+
+  --fs-1: 28px;
+  --fs-2: 22px;
+  --fs-3: 18px;
+  --fs-4: 16px;
+  --fs-5: 15px;
+  --fs-6: 14px;
+  --fs-7: 13px;
+  --fs-8: 12px;
+
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+
+  /* ===== SHADOW ===== */
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.08);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,.12);
+
+  /* ===== TRANSITION ===== */
+
+  --transition-1: .2s ease;
+  --transition-2: .4s ease;
+}
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { font-family: var(--ff-poppins); }
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+a { text-decoration: none; color: inherit; }
+li { list-style: none; }
+img, a, button, span { display: block; }
+
+button {
+  font: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input, textarea {
+  width: 100%;
+  font: inherit;
+  border: none;
+  background: none;
+}
+
+/*-----------------------------------*\
+  #GLOBAL CARD STYLE
+\*-----------------------------------*/
+
+.sidebar,
+article,
+.content-card,
+.service-item,
+.blog-post-item > a,
+.testimonials-modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+/*-----------------------------------*\
+  #TEXT
+\*-----------------------------------*/
+
+.h2, .h3, .h4, .h5 {
+  color: var(--text-main);
+}
+
+.about-text,
+.service-item-text,
+.blog-text,
+.timeline-text,
+.testimonials-text {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/*-----------------------------------*\
+  #ICON
+\*-----------------------------------*/
+
+.icon-box {
+  background: var(--primary-soft);
+  color: var(--primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*-----------------------------------*\
+  #MAIN
+\*-----------------------------------*/
+
+main {
+  margin: 20px auto 80px;
+  max-width: 1200px;
+}
+
+/*-----------------------------------*\
+  #SIDEBAR
+\*-----------------------------------*/
+
+.sidebar {
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.info-content .name {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-600);
+}
+
+.info-content .title {
+  background: var(--bg-soft);
+  color: var(--text-muted);
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: var(--fs-8);
+}
+
+/*-----------------------------------*\
+  #NAVBAR
+\*-----------------------------------*/
+
+.navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #ffffffcc;
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--border-color);
+}
+
+.navbar-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.navbar-link {
+  padding: 18px 10px;
+  font-size: var(--fs-7);
+  color: var(--text-muted);
+}
+
+.navbar-link.active {
+  color: var(--primary);
+  font-weight: var(--fw-600);
+}
+
+/*-----------------------------------*\
+  #SERVICE
+\*-----------------------------------*/
+
+.service-list {
+  display: grid;
+  gap: 20px;
+}
+
+.service-item {
+  padding: 24px;
+}
+
+.service-item-title {
+  margin-bottom: 8px;
+}
+
+/*-----------------------------------*\
+  #TESTIMONIAL
+\*-----------------------------------*/
+
+.testimonials-list {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.testimonials-item {
+  min-width: 100%;
+}
+
+/*-----------------------------------*\
+  #CLIENT
+\*-----------------------------------*/
+
+.clients-item img {
+  filter: grayscale(100%);
+  opacity: .7;
+  transition: var(--transition-1);
+}
+
+.clients-item img:hover {
+  filter: none;
+  opacity: 1;
+}
+
+/*-----------------------------------*\
+  #BLOG
+\*-----------------------------------*/
+
+.blog-posts-list {
+  display: grid;
+  gap: 24px;
+}
+
+.blog-banner-box img {
+  border-radius: 12px;
+}
+
+/*-----------------------------------*\
+  #FORM
+\*-----------------------------------*/
+
+.form-input {
+  background: var(--bg-soft);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 14px 18px;
+}
+
+.form-btn {
+  background: var(--primary);
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.form-btn:hover {
+  background: #1d4ed8;
+}
+
+/*-----------------------------------*\
+  #RESPONSIVE
+\*-----------------------------------*/
+
+@media (min-width: 768px) {
+  .service-list { grid-template-columns: 1fr 1fr; }
+  .blog-posts-list { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 1024px) {
+  .service-list { grid-template-columns: repeat(3,1fr); }
+}
